@@ -1,0 +1,43 @@
+{
+  "policies": [
+    {
+      "handler": {
+        "export": "ApiKeyInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "cacheTtlSeconds": 60
+        }
+      },
+      "name": "api-key-inbound",
+      "policyType": "api-key-inbound"
+    },
+    {
+      "handler": {
+        "export": "LoadSubscriptionInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowRequestsWithoutSubscription": false
+        }
+      },
+      "name": "check-subscription",
+      "policyType": "load-subscription-inbound"
+    },
+    {
+      "handler": {
+        "export": "MeteringInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowRequestsWithoutSubscription": false,
+          "allowRequestsOverQuota": false,
+          "meters": {
+            "requests": 1,
+            "computeUnits": 3
+          }
+        }
+      },
+      "name": "update-quota-on-subscription",
+      "policyType": "metering-inbound"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://cdn.zuplo.com/schemas/dev-portal.json",
+  "enabled": true,
+  "enableAuthentication": true,
+  "enableMetering": true,
+  "metering": {
+    "provider": "stripe",
+    "publishableKey": "$env(STRIPE_PUBLISHABLE_KEY)",
+    "pricingTableId": "$env(STRIPE_PRICING_TABLE_ID)",
+    "secretKey": "$env(STRIPE_SECRET_KEY)"
+  }
+}
