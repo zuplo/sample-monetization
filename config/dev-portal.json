@@ -5,8 +5,8 @@
   "enableMetering": true,
   "metering": {
     "provider": "stripe",
-    "publishableKey": "$env(STRIPE_PUBLISHABLE_KEY)",
-    "pricingTableId": "$env(STRIPE_PRICING_TABLE_ID)",
+    "publishableKey": "$env(ZUPLO_PUBLIC_STRIPE_PUBLISHABLE_KEY)",
+    "pricingTableId": "$env(ZUPLO_PUBLIC_STRIPE_PRICING_TABLE_ID)",
     "secretKey": "$env(STRIPE_SECRET_KEY)"
   }
 }
