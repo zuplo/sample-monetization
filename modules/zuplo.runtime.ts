@@ -9,7 +9,6 @@ export function runtimeInit(runtime: RuntimeExtensions) {
     webhooks: {
       signingSecret: environment.STRIPE_WEBHOOK_SIGNING_SECRET,
     },
-    zuploAccountApiKey: "",
     stripeSecretKey: environment.STRIPE_SECRET_KEY,
   });
   runtime.addPlugin(stripe);
