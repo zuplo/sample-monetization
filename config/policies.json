@@ -20,7 +20,7 @@
           "allowRequestsWithoutSubscription": false
         }
       },
-      "name": "check-subscription",
+      "name": "load-subscription",
       "policyType": "load-subscription-inbound"
     },
     {
@@ -36,8 +36,23 @@
           }
         }
       },
-      "name": "update-quota-on-subscription",
+      "name": "update-meters",
       "policyType": "metering-inbound"
+    },
+    {
+      "handler": {
+        "export": "CompositeInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "policies": [
+            "api-key-inbound",
+            "load-subscription",
+            "update-meters"
+          ]
+        }
+      },
+      "name": "monetization",
+      "policyType": "composite-inbound"
     }
   ]
 }
