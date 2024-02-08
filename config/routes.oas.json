@@ -23,9 +23,7 @@
           },
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "check-subscription",
-              "update-quota-on-subscription"
+              "monetization"
             ]
           }
         },
