@@ -14,18 +14,7 @@
     },
     {
       "handler": {
-        "export": "LoadSubscriptionInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowRequestsWithoutSubscription": false
-        }
-      },
-      "name": "load-subscription",
-      "policyType": "load-subscription-inbound"
-    },
-    {
-      "handler": {
-        "export": "MeteringInboundPolicy",
+        "export": "MonetizationInboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {
           "allowRequestsWithoutSubscription": false,
@@ -36,8 +25,8 @@
           }
         }
       },
-      "name": "update-meters",
-      "policyType": "metering-inbound"
+      "name": "monetization-inbound",
+      "policyType": "monetization-inbound"
     },
     {
       "handler": {
@@ -46,8 +35,7 @@
         "options": {
           "policies": [
             "api-key-inbound",
-            "load-subscription",
-            "update-meters"
+            "monetization-inbound"
           ]
         }
       },
