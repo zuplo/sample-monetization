@@ -1,11 +1,11 @@
 import {
   RuntimeExtensions,
-  StripeMeteringPlugin,
+  StripeMonetizationPlugin,
   environment,
 } from "@zuplo/runtime";
 
 export function runtimeInit(runtime: RuntimeExtensions) {
-  const stripe = new StripeMeteringPlugin({
+  const stripe = new StripeMonetizationPlugin({
     webhooks: {
       signingSecret: environment.STRIPE_WEBHOOK_SIGNING_SECRET,
     },
