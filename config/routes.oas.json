@@ -23,7 +23,8 @@
           },
           "policies": {
             "inbound": [
-              "monetization"
+              "api-key-inbound",
+              "monetization-inbound"
             ]
           }
         },

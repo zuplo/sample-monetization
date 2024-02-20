@@ -19,29 +19,14 @@
         "options": {
           "allowRequestsWithoutSubscription": false,
           "allowRequestsOverQuota": false,
-          "meterOnStatusCodes": "200-299",
+          "meterOnStatusCodes": "200-399",
           "meters": {
-            "requests": 1,
-            "computeUnits": 3
+            "requests": 1
           }
         }
       },
       "name": "monetization-inbound",
       "policyType": "monetization-inbound"
-    },
-    {
-      "handler": {
-        "export": "CompositeInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "policies": [
-            "api-key-inbound",
-            "monetization-inbound"
-          ]
-        }
-      },
-      "name": "monetization",
-      "policyType": "composite-inbound"
     }
   ]
 }
